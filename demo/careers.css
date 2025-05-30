@@ -1,0 +1,332 @@
+/* Career page  */
+
+* {
+  margin: 3px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+
+/* Hero Section */
+.career-hero {
+  background: url("be832922391491.58c25558f0fe7.gif") no-repeat center center;
+  background-size: cover;
+  height: 80vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 40px;
+}
+
+
+.career-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 0;
+}
+
+
+.career-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+.career-hero h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+
+.career-hero p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: auto;
+}
+.pos {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin: 3rem 0 1rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.pos::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background-color: #1976d2;
+  margin: 0.6rem auto 0;
+  border-radius: 3px;
+}
+
+/* Container */
+.open-positions .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Job Grid */
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.2rem;
+}
+
+/* Job Card */
+.job-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(25, 118, 210, 0.15);
+  padding: 1.8rem 1.5rem 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(25, 118, 210, 0.3);
+}
+
+/* Job Title */
+.job-card h3 {
+  font-size: 1.3rem;
+  color: #0d1b41;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Job Description */
+.job-card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-style: normal;
+  flex-grow: 1;
+}
+
+/* Job Details List */
+.job-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.2rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1rem;
+}
+
+.job-card ul li {
+  margin-bottom: 0.45rem;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* Custom bullet using before */
+.job-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #1976d2;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+  top: 0;
+}
+
+/* Apply Button */
+.apply-btn {
+  display: inline-block;
+  text-align: center;
+  background-color: #1976d2;
+  color: #fff;
+  padding: 0.65rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+.apply-btn:hover,
+.apply-btn:focus {
+  background-color: #0f4cba;
+  box-shadow: 0 6px 18px rgba(15, 76, 186, 0.6);
+  outline: none;
+  text-decoration: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .job-card {
+    padding: 1.5rem 1.2rem 1.8rem;
+  }
+
+  .job-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .job-card p {
+    font-size: 0.95rem;
+  }
+
+  .apply-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.3rem;
+  }
+}
+
+.cta {
+  background: linear-gradient(135deg, #1976d2, #63a4ff);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 8px 20px rgba(25, 118, 210, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(25deg);
+  animation: shine 3s linear infinite;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+@keyframes shine {
+  0% { transform: rotate(25deg) translateX(-100%); }
+  100% { transform: rotate(25deg) translateX(100%); }
+}
+
+.cta .container {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  letter-spacing: 1.2px;
+  transition: color 0.3s ease;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(232, 242, 247, 0.2);
+  color: #d8e1ee;
+}
+
+.cta-btn {
+  background-color: #fff;
+  color: #1976d2;
+  font-weight: 700;
+  padding: 0.85rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  cursor: pointer;
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease, 
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  box-shadow: 0 10px 25px rgba(30, 136, 229, 0.7);
+  transform: scale(1.05);
+  outline: none;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, transparent 70%);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  border-radius: 50%;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.cta-btn:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cta {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+  }
+}

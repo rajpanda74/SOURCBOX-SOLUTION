@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Shrinking Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background: rgba(237, 235, 235, 0.95);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 100%;
+      white-space: nowrap; /* no wrapping */
+      position: fixed;
+      z-index: 1;
+    }
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap; /* no wrapping */
+      gap: 30px;
+    }
+    .logo img {
+      height: 60px;
+      width: auto;
+      flex-shrink: 0;
+      transition: height 0.3s ease;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      flex-shrink: 1;
+      overflow: hidden; /* prevent overflow */
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      white-space: nowrap;
+      transition: color 0.3s, font-size 0.3s;
+      display: inline-block;
+    }
+    .nav-links li a:hover {
+      color: #265718;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      min-width: 200px;
+      z-index: 1001;
+      border-radius: 5px;
+    }
+    .dropdown-menu li {
+      border-bottom: 1px solid #eee;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: #f4f4f4;
+      color: #61ab42;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .social-icons {
+      display: flex;
+      gap: 16px;
+      font-size: 24px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .social-icons a {
+      color: #333;
+      transition: color 0.3s, transform 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .social-icons a:hover {
+      color: #0f6016;
+      transform: scale(1.2);
+    }
+
+    /* Responsive scaling */
+    @media (max-width: 1200px) {
+      .nav-content {
+        gap: 20px;
+      }
+      .logo img {
+        height: 50px;
+      }
+      .nav-links {
+        gap: 20px;
+      }
+      .nav-links li a {
+        font-size: 16px;
+      }
+      .social-icons {
+        font-size: 20px;
+        gap: 12px;
+      }
+    }
+    @media (max-width: 900px) {
+      .nav-content {
+        gap: 15px;
+        padding: 10px 10px;
+      }
+      .logo img {
+        height: 40px;
+      }
+      .nav-links {
+        gap: 15px;
+      }
+      .nav-links li a {
+        font-size: 14px;
+      }
+      .social-icons {
+        font-size: 18px;
+        gap: 10px;
+      }
+    }
+    @media (max-width: 600px) {
+      .nav-content {
+        gap: 10px;
+        padding: 8px 8px;
+      }
+      .logo img {
+        height: 30px;
+      }
+      .nav-links {
+        gap: 10px;
+      }
+      .nav-links li a {
+        font-size: 12px;
+      }
+      .social-icons {
+        font-size: 16px;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="desigh.html">Home</a></li>
+        <li class="dropdown">
+          <a href="service.html">Services <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="service.html#ai-language">AI Database Developer</a></li>
+            <li><a href="service.html#sweekar">SWEEKAAR</a></li>
+            <li><a href="service.html#resourc-it">Resource-IT</a></li>
+            <li><a href="service.html#advertising">Event Management</a></li>
+            <li><a href="service.html#web-development">Web Development</a></li>
+            <li><a href="service.html#advertising">Advertising & Marketing</a></li>
+          </ul>
+        </li>
+        <li><a href="career.html">Careers</a></li>
+        <li><a href="reachus.html">Reach Us</a></li>
+      </ul>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/people/Sourcbox-Solution/100076324984058/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/sourcbox-solution-06488926b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/sourcbox_solution/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </nav>
+</body>
+</html>
